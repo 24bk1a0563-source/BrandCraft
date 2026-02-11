@@ -134,6 +134,7 @@ http://127.0.0.1:8000
 | `/generate-logo-svg`          | POST   | Generate logo SVG      |
 
 
+
 🎯 Uniqueness & Innovation
 
 No dependency on paid AI APIs
