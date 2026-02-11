@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>BrandCraft – AI Branding</title>
+
+<style>
+:root {
+  --primary: #111827;
+  --accent: #4F46E5;
+  --muted: #6B7280;
+  --bg: #F3F4F6;
+  --card: #FFFFFF;
+  --border: #E5E7EB;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--primary);
+}
+
+/* Layout */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 32px 20px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+}
+
+section {
+  margin-bottom: 28px;
+}
+
+/* Typography */
+h1 { font-size: 36px; margin-bottom: 12px; }
+h2 { font-size: 24px; margin-bottom: 10px; }
+h3 { font-size: 18px; margin-bottom: 8px; }
+p { color: var(--muted); margin-bottom: 12px; }
+
+/* Inputs */
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+input, select {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #F9FAFB;
+  font-size: 14px;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover { opacity: 0.92; }
+
+/* Brand list */
+#brandNames li {
+  cursor: pointer;
+  padding: 6px 0;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+/* Colors */
+.color-box {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-right: 8px;
+  border: 1px solid var(--border);
+}
+
+/* Logos */
+#logo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.logo-box {
+  background: #F9FAFB;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  background: #EEF2FF;
+  color: var(--accent);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+  padding: 20px 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+  <h2>BrandCraft</h2>
+  <span class="badge">AI Branding Platform</span>
+</div>
+
+<!-- HERO -->
+<section class="container">
+  <div class="card">
+    <span class="badge">Generative AI</span>
+    <h1>Create a complete brand in minutes.</h1>
+    <p>
+      BrandCraft helps small product-based businesses generate brand names,
+      logos, colors, and visual identity — no design skills required.
+    </p>
+  </div>
+</section>
+
+<!-- BRAND GENERATOR -->
+<section class="container">
+  <div class="card">
+    <h2>Brand Generator</h2>
+    <p>Enter your business details and instantly generate a brand kit.</p>
+
+    <div class="grid grid-3">
+      <input id="businessType" placeholder="Business type (startup)">
+      <select id="productCategory">
+        <option value="food">Food</option>
+        <option value="fashion">Fashion</option>
+        <option value="footwear">Footwear</option>
+        <option value="default">Other</option>
+      </select>
+      <input id="targetAudience" placeholder="Target audience">
+    </div>
+
+    <br>
+    <button id="btn">Generate Brand</button>
+
+    <hr style="margin:24px 0;border:none;border-top:1px solid var(--border);">
+
+    <h3>Brand Names</h3>
+    <ul id="brandNames"></ul>
+
+    <h3>Color Palette</h3>
+    <div id="colors"></div>
+
+    <h3>Logo Styles</h3>
+    <p style="font-size:14px;color:var(--muted);">
+      Showing logo variations for selected brand
+    </p>
+    <div id="logo"></div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="container">
+  <h2>What BrandCraft Does</h2>
+  <div class="grid grid-3">
+    <div class="card">
+      <h3>Smart Brand Names</h3>
+      <p>Category-aware naming for food, fashion, and footwear brands.</p>
+    </div>
+    <div class="card">
+      <h3>AI Logo Engine</h3>
+      <p>Multiple logo styles with industry-specific typography.</p>
+    </div>
+    <div class="card">
+      <h3>Instant Brand Kit</h3>
+      <p>Colors, logos, and identity generated in seconds.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="container">
+  <div class="card">
+    <h2>About BrandCraft</h2>
+    <p>
+      BrandCraft is a generative-AI powered branding automation system
+      designed for startups and creators. It simplifies brand development
+      by combining naming, visual identity, and design logic into one
+      integrated workflow.
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 BrandCraft · Built for Hackathons
+</footer>
+
+<!-- YOUR EXISTING JAVASCRIPT STAYS BELOW (UNCHANGED) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  let selectedBrand = null;
+  let primaryColor = null;
+  let selectedCategory = "default";
+
+  const btn = document.getElementById("btn");
+  if (!btn) {
+    console.error("Generate button not found");
+    return;
+  }
+
+  btn.addEventListener("click", async () => {
+    try {
+      console.log("Generate clicked");
+
+      const data = {
+        business_type: document.getElementById("businessType").value || "",
+        product_category: document.getElementById("productCategory").value || "default",
+        target_audience: document.getElementById("targetAudience").value || ""
+      };
+
+      selectedCategory = data.product_category;
+
+      // 1️⃣ Brand names
+      const namesRes = await fetch("/generate-brand-names-local", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      const namesData = await namesRes.json();
+      console.log("Brand names:", namesData);
+
+      const brandNames = namesData.brand_names || [];
+      const brandList = document.getElementById("brandNames");
+      brandList.innerHTML = "";
+
+      brandNames.forEach(name => {
+        const li = document.createElement("li");
+        li.textContent = name;
+        li.onclick = () => selectBrand(name);
+        brandList.appendChild(li);
+      });
+
+      // 2️⃣ Colors
+      const colorsRes = await fetch("/generate-color-palette", { method: "POST" });
+      const colorsData = await colorsRes.json();
+      console.log("Colors:", colorsData);
+
+      primaryColor = colorsData.colors[0];
+      document.getElementById("colors").innerHTML =
+        colorsData.colors.map(c =>
+          `<div class="color-box" style="background:${c}"></div>`
+        ).join("");
+
+      if (brandNames.length > 0) {
+        selectBrand(brandNames[0]);
+      }
+
+    } catch (err) {
+      console.error("ERROR:", err);
+      alert("Error — check console");
+    }
+  });
+
+  function selectBrand(name) {
+    selectedBrand = name;
+    generateLogos();
+  }
+
+  async function generateLogos() {
+    if (!selectedBrand || !primaryColor) return;
+
+    const styles = ["circle", "square", "badge", "diamond", "line"];
+    const logoDiv = document.getElementById("logo");
+    logoDiv.innerHTML = "";
+
+    for (const style of styles) {
+      const res = await fetch(
+        `/generate-logo-svg?brand_name=${encodeURIComponent(selectedBrand)}&primary_color=${encodeURIComponent(primaryColor)}&category=${encodeURIComponent(selectedCategory)}&style=${style}`,
+        { method: "POST" }
+      );
+
+      const data = await res.json();
+
+      const box = document.createElement("div");
+      box.className = "logo-box";
+      box.innerHTML = `
+        <div style="font-size:12px;margin-bottom:6px">${style}</div>
+        ${data.svg_logo}
+      `;
+      logoDiv.appendChild(box);
+    }
+  }
+
+});
+</script>
+
+
+
+</body>
+</html>
