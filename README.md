@@ -80,16 +80,18 @@ Many startups and creators struggle with:
 
 ## 🖼️ Screenshots
 
-> 📌 Add screenshots here after running the app
 
 ### 🧩 Homepage & Brand Generator
-![BrandCraft Home](screenshots/home.png)
+<img width="1920" height="1080" alt="screenshotshome png" src="https://github.com/user-attachments/assets/d2062849-484e-4c3a-ae53-ff5557dc90bf" />
+
 
 ### 🎨 Generated Brand Names & Colors
-![Brand Names](screenshots/brand-names.png)
+<img width="1920" height="1080" alt="screenshotsbrand-names png" src="https://github.com/user-attachments/assets/c89bb68f-90c5-45c1-a2ca-70b550cc923f" />
+
 
 ### 🖌️ Logo Variations
-![Logos](screenshots/logos.png)
+<img width="1920" height="1080" alt="screenshotslogos png" src="https://github.com/user-attachments/assets/f032c473-6230-4ce0-96d2-045ac89f13ec" />
+
 
 ---
 
